@@ -1,4 +1,4 @@
-# def greet(Please enter the number of shares):
+# def greet(Please enter the number of shares):        #FUNCTION WORKSS!!! 
 
 c = int(input("Please enter the number of shares: "))
 #In order to be able to write an integer to the program we need to define the input line for user.
