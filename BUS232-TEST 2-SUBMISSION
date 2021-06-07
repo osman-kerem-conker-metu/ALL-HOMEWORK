@@ -1,0 +1,28 @@
+# def greet(Please enter the number of shares):
+
+c = int(input("Please enter the number of shares: "))
+#In order to be able to write an integer to the program we need to define the input line for user.
+# c can only be an integer so we should write "int";otherwise people may type decimal numbers.
+shares = []
+#The function which takes as inputs a string and a number, respectively.
+#They also both get the same variable, c, as input. This is the code that we're gonna write.
+while (c !=0): #!= is defined as not equal to operator.
+# It returns true if operands on either side are not eual to each other, and returns false if they are equal.
+    shares.append(c)  # for all these function I needed to do a web search to put the right one.
+#The while loop searches for the suitable numbers to be able to maintain the function.    
+    c = int(input("Please enter the number of shares: "))    
+print("\nThank you, there is a total of {} shares showed here.".format(sum(shares)))
+#This function enables us to complete thhe function by summming up all numbers that the user enter,
+#and after all we need to record it. so here we use ".format" function to get a record.  
+majority = sum(shares)//2 + 1
+print("Shares needed for majority vote is {}".format(majority))
+shares = sorted(shares, reverse = True)
+#Collecting all data and summed up variables are needed to be sorted to see the numbers lower to higher...
+#Below we need to focus on the majority because to be able to say that who is the winner of the voting
+#we should add "plus" sign that we found previously. By this function we can consider which
+#supporter or how many supporters we need.
+for i in range(len(shares)):
+    if sum(shares[:i+1]) >= majority:
+        print("You need the support of top {} shareholders for this voting.".format(i+1))
+        break
+    #Instead of using "esit.()" function we can simply add break function to stop that loop.
